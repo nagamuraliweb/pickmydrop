@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>Signup</ion-title>
+        
+        <div class="hd-icon"><img src="assets/imgs/hd-icon.png" alt="icon"></div>
+    </ion-navbar>
+</ion-header>
+  
+<ion-content padding class="home-bg common-bg">
+    <ion-row>
+
+        <ion-col col-12>
+
+            <div class="inner-page-logo">
+                <img src="assets/imgs/inner-page-logo.png" alt="Logo">
+            </div>
+
+            <div class="singup-icon">
+                <img src="assets/imgs/singup-icon.png" alt="User">
+            </div>
+
+            <ion-list class="signup-wrap"> 
+              
+                <ion-item class="gender-select"> 
+                  <div>
+                    <img src="assets/imgs/man.png" alt="User">
+                    <input type="radio" name="gender" value="male">
+                  </div> 
+                  <div>
+                      <img src="assets/imgs/women.png" alt="User">
+                      <input type="radio" name="gender" value="female">
+                    </div> 
+                </ion-item> 
+                
+                <form>
+                    <ion-item class="input-field"> 
+                        <ion-input type="text" placeholder="First Name"></ion-input>
+                    </ion-item>
+                    
+                    <ion-item class="input-field"> 
+                        <ion-input type="text" placeholder="Last Name"></ion-input>
+                    </ion-item> 
+                    
+                    <ion-item class="input-field">
+                      <ion-input type="password" placeholder="Password"></ion-input>
+                    </ion-item>
+                    
+                    <ion-item class="input-field no-verify"> 
+                      <ion-input type="text" placeholder="+91 000-000-0000"></ion-input>
+                    </ion-item> 
+
+                    <ion-item class="terms-cnd"> 
+                        <input type="checkbox"> I agree to <span>Tearms and Conditions</span>
+                    </ion-item> 
+
+                    <div class="home-btn">
+                      <button ion-button class="login-btn" (click)="goToServices()">Submit</button>
+                    </div>
+                </form>
+
+            </ion-list>
+        </ion-col>
+
+    </ion-row>
+</ion-content>

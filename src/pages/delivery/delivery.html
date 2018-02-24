@@ -1,0 +1,57 @@
+
+
+<ion-header>
+        <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Delivery </ion-title>
+        <div class="hd-icon"><img src="../../assets/imgs/hd-icon.png" alt="icon"></div>
+        </ion-navbar>
+    </ion-header>
+        
+        <ion-content padding class="home-bg common-bg login-wrap">
+        
+        <ion-row>
+        <ion-col col-12>
+      
+        <div class="inner-page-logo">
+        <img src="../../assets/imgs/inner-page-logo.png" alt="Logo">
+        </div> 
+        <form>
+            <ion-list class="signup-wrap del-pur-ride"> 
+                
+                <ion-item class="input-field"> 
+                    <ion-label>Pickup From :</ion-label>
+                    <ion-input type="text" ></ion-input>
+                </ion-item>
+                
+                <ion-item class="input-field">
+                    <ion-label>Delivery To :</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+                <div class="get-loc" (click)="goToLocation()">Get My Location <img src="../assets/imgs/get-loc-icon.png" alt="icon"></div>
+    
+                <ion-item class="input-field"> 
+                    <ion-label>Item Description / Ref No :</ion-label>
+                    <ion-input type="text"></ion-input>  
+                </ion-item>
+                <div class="for-ex-lr">For Ex LR No 123456</div>
+
+                <div class="show-details">
+                    <p>Total KM : 16.2</p>
+                    <p>Delivery Charge : 155.00 INR</p>
+                </div>
+
+                <div class="home-btn">
+                    <button ion-button class="login-btn">Confirm</button>
+                </div>
+        
+            </ion-list>
+        </form>
+
+        
+        </ion-col>
+        </ion-row>
+        
+        </ion-content>

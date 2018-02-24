@@ -1,0 +1,44 @@
+<ion-menu [content]="content" >
+    <!-- <ion-header>
+    <ion-toolbar>
+    <div class="menu-logo">
+    <img src="../../assets/imgs/logo_mobile.png" alt="Logo">
+    </div> 
+    <ion-title>Menu</ion-title>
+    </ion-toolbar>
+    </ion-header> -->
+    
+    <ion-content class="rgt-slider">
+    <div class="menu-logo">
+    <img src="../../assets/imgs/logo_mobile.png" alt="Logo">
+    </div> 
+    
+    <div class="menu-head"><img src="./../assets/imgs/account-icon.png">My Account</div>
+    <ul class="slider-menu">
+    <li><img src="../../assets/imgs/profile-icon.png" alt="My Profile">My Profile</li>
+    <li><img src="../../assets/imgs/edit-icon.png" alt="Edit Profile">Edit Profile</li>
+    <li><img src="../../assets/imgs/order-icon.png" alt="My Orders">My Orders</li>
+    <li><img src="../../assets/imgs/credit-icon.png" alt="My Credit">My Credit</li>
+    <li><img src="../../assets/imgs/logout-icon.png" alt="Logout">Logout</li>
+    </ul>
+    <!-- <ion-list >
+    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="slider-inner">
+    {{p.title}}
+    </button>
+    </ion-list> -->
+    <div class="slider-btm">
+    <div class="slider-cont">
+    <img src="../../assets/imgs/track-icon.png" alt="track">
+    <span>Track Order</span>
+    </div>
+    <div class="slider-cont">
+    <img src="../../assets/imgs/rupee-icon.png" alt="Credit">
+    <span>Add Credit</span>
+    </div>
+    </div>
+    </ion-content>
+    
+    </ion-menu>
+    
+    <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

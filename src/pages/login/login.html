@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>Login </ion-title>
+
+        <div class="hd-icon"><img src="assets/imgs/hd-icon.png" alt="icon"></div>
+    </ion-navbar>
+</ion-header>
+    
+<ion-content padding class="home-bg common-bg login-wrap">
+    <ion-row>
+        <ion-col col-12>
+    
+            <div class="inner-page-logo">
+                <img src="assets/imgs/inner-page-logo.png" alt="Logo">
+            </div> 
+        
+            <ion-list class="signup-wrap"> 
+                <form>   
+                    <ion-item class="input-field"> 
+                        <ion-input type="text" placeholder="Email OR Phone"></ion-input>
+                    </ion-item>
+                    
+                    <ion-item class="input-field">
+                        <ion-input type="password" placeholder="Password"></ion-input>
+                    </ion-item>
+            
+                    <div class="home-btn">
+                        <button ion-button class="login-btn" (click)="goToServices()">Submit</button>
+                    </div>
+                </form>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+</ion-content>
