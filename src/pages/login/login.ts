@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { NavController } from 'ionic-angular';
 import { ServicesPage } from '../../pages/services/services';
 
@@ -8,12 +9,17 @@ import { ServicesPage } from '../../pages/services/services';
 })
 export class LoginPage {
 
-    constructor(public nav: NavController) {
-
+    constructor(public nav: NavController, public formBuilder: FormBuilder) {
+    	this.loginForm = formBuilder.group({
+	        username: ['', Validators.compose([Validators.required])],
+	        password: ['', Validators.compose([Validators.required])]
+	    });
     }
 
     goToServices(){
-        this.nav.push(ServicesPage);
+
+    	console.log(this.loginForm.get('username'));
+        //this.nav.push(ServicesPage);
     }
 
 }

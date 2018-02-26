@@ -36,25 +36,29 @@
                     </div> 
                 </ion-item> 
                 
-                <form>
+                <form [formGroup]="signUpForm">
                     <ion-item class="input-field"> 
-                        <ion-input type="text" placeholder="First Name"></ion-input>
+                        <ion-input type="text" name="firstname" formControlName="firstname" placeholder="First Name"></ion-input>
                     </ion-item>
                     
                     <ion-item class="input-field"> 
-                        <ion-input type="text" placeholder="Last Name"></ion-input>
-                    </ion-item> 
+                        <ion-input type="text" name="lastname" formControlName="lastname" placeholder="Last Name"></ion-input>
+                    </ion-item>
+
+                    <ion-item class="input-field">
+                      <ion-input type="email" name="email" formControlName="email" placeholder="Email"></ion-input>
+                    </ion-item>
                     
                     <ion-item class="input-field">
-                      <ion-input type="password" placeholder="Password"></ion-input>
+                      <ion-input type="password" name="password" formControlName="password" placeholder="Password"></ion-input>
                     </ion-item>
                     
                     <ion-item class="input-field no-verify"> 
-                      <ion-input type="text" placeholder="+91 000-000-0000"></ion-input>
+                      <ion-input type="text" name="phone" formControlName="phone" placeholder="+91 000-000-0000"></ion-input>
                     </ion-item> 
 
                     <ion-item class="terms-cnd"> 
-                        <input type="checkbox"> I agree to <span>Tearms and Conditions</span>
+                        <input type="checkbox" name="terms" formControlName="terms"> I agree to <span>Tearms and Conditions</span>
                     </ion-item> 
 
                     <div class="home-btn">
