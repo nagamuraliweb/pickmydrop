@@ -1,29 +1,45 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from 'ionic-angular';
-import { ServicesPage } from '../../pages/services/services';
+import { LoginPage } from '../../pages/login/login';
+
+import { SignUpService } from '../../pages/signup/signup.service';
 
 @Component({
     selector: 'page-signup',
-    templateUrl: 'signup.html'
+    templateUrl: 'signup.html',
+    providers: [SignUpService]
 })
 export class SignupPage {
 
-    constructor(public nav: NavController, public formBuilder: FormBuilder) {
+    resp : string;
+    
+    constructor(public nav: NavController, public formBuilder: FormBuilder, private signUpService: SignUpService) {
     	this.signUpForm = formBuilder.group({
-	        firstname: [''],
-	        lastname: [''],
-	        email: [''],
-	        password: [''],
-	        phone: [''],
-	        terms: ['']
+	        firstname: ['', Validators.compose([Validators.required])],
+	        lastname: ['', Validators.compose([Validators.required])],
+	        email: ['', Validators.compose([Validators.required])],
+	        password: ['', Validators.compose([Validators.required])],
+	        phone: ['', Validators.compose([Validators.required])],
+	        terms: ['', Validators.compose([Validators.required])],
+            deviceId: '',
+            userdevicetoken: '',
+            invitecode: ''
 	    });
     }
 
-    goToServices() {
+    signUp() {
 
-    	console.log(this.firstname);
-        //this.nav.push(ServicesPage);
+        if (this.signUpForm.dirty && this.signUpForm.valid) {
+            console.log(this.signUpForm.value);
+
+            this.signUpService.signUp(this.signUpForm.value)
+                .subscribe(() => { this.goToLogin(); });
+        }
+    }
+
+    goToLogin() {
+        this.nav.push(LoginPage);
     }
 
 }

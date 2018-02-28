@@ -18,23 +18,23 @@
         <div class="inner-page-logo">
         <img src="../../assets/imgs/inner-page-logo.png" alt="Logo">
         </div> 
-        <form>
+        <form [formGroup]="deliveryForm" (submit)="confirm()">
             <ion-list class="signup-wrap del-pur-ride"> 
                 
                 <ion-item class="input-field"> 
                     <ion-label>Pickup From :</ion-label>
-                    <ion-input type="text" ></ion-input>
+                    <ion-input type="text" name="pickup" formControlName="pickup" [class.invalid]="!deliveryForm.controls.pickup.valid && deliveryForm.controls.pickup.dirty"></ion-input>
                 </ion-item>
                 
                 <ion-item class="input-field">
                     <ion-label>Delivery To :</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input type="text" name="delivery" formControlName="delivery" [class.invalid]="!deliveryForm.controls.delivery.valid && deliveryForm.controls.delivery.dirty"></ion-input>
                 </ion-item>
                 <div class="get-loc" (click)="goToLocation()">Get My Location <img src="../assets/imgs/get-loc-icon.png" alt="icon"></div>
     
                 <ion-item class="input-field"> 
                     <ion-label>Item Description / Ref No :</ion-label>
-                    <ion-input type="text"></ion-input>  
+                    <ion-input type="text" name="item" formControlName="item" [class.invalid]="!deliveryForm.controls.item.valid && deliveryForm.controls.item.dirty"></ion-input>  
                 </ion-item>
                 <div class="for-ex-lr">For Ex LR No 123456</div>
 
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="home-btn">
-                    <button ion-button class="login-btn">Confirm</button>
+                    <button ion-button class="login-btn" [disabled]="!deliveryForm.valid">Confirm</button>
                 </div>
         
             </ion-list>

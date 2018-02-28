@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { NavController } from 'ionic-angular';
 import { LocationPage } from '../../pages/location/location';
 
@@ -8,8 +10,12 @@ import { LocationPage } from '../../pages/location/location';
 })
 export class RidePage {
 
-    constructor(public nav: NavController) {
-
+    constructor(public nav: NavController, public formBuilder: FormBuilder) {
+    	this.rideForm = formBuilder.group({
+	        pickup: ['', Validators.compose([Validators.required])],
+	        stop: '',
+	        dropto: ['', Validators.compose([Validators.required])]
+	    });
     }
 
     goToLocation(){

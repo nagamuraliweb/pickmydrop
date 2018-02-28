@@ -19,14 +19,18 @@
                 <img src="assets/imgs/inner-page-logo.png" alt="Logo">
             </div> 
 
-            <form>
+            <form [formGroup]="rideForm" (submit)="confirm()">
                 <ion-list class="signup-wrap del-pur-ride"> 
                     
                     <ion-item class="input-field"> 
                         <ion-label>Pickup From :</ion-label>
-                        <ion-input type="text" ></ion-input>
+                        <ion-input type="text" name="pickup" formControlName="pickup" [class.invalid]="!rideForm.controls.pickup.valid && rideForm.controls.pickup.dirty"></ion-input>
                     </ion-item>
                     <div class="get-loc" (click)="goToLocation()">Get My Location <img src="assets/imgs/get-loc-icon.png" alt="icon"></div>
+
+                    <ion-item *ngIf="!rideForm.controls.pickup.valid && rideForm.controls.pickup.dirty">
+                        <p>Please enter a Pickup From</p>
+                    </ion-item>
                     
                     <ion-item class="input-field">
                         <ion-label>Stop (if any) :</ion-label>
@@ -35,9 +39,13 @@
 
                     <ion-item class="input-field"> 
                         <ion-label>Drop to :</ion-label>
-                        <ion-input type="text"></ion-input>  
+                        <ion-input type="text" name="dropto" formControlName="dropto" [class.invalid]="!rideForm.controls.dropto.valid && rideForm.controls.dropto.dirty"></ion-input>  
                     </ion-item>
                     <div class="get-loc" (click)="goToLocation()">Get My Location <img src="assets/imgs/get-loc-icon.png" alt="icon"></div>
+
+                    <ion-item *ngIf="!rideForm.controls.dropto.valid && rideForm.controls.dropto.dirty">
+                        <p>Please enter a Drop to</p>
+                    </ion-item>
 
                     <div class="show-details">
                         <p>Total KM : 36.2</p>
@@ -45,7 +53,7 @@
                     </div>
 
                     <div class="home-btn">
-                        <button ion-button class="login-btn">Confirm</button>
+                        <button ion-button class="login-btn" [disabled]="!rideForm.valid">Confirm</button>
                     </div>
             
                 </ion-list>

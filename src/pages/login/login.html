@@ -19,17 +19,25 @@
             </div> 
         
             <ion-list class="signup-wrap"> 
-                <form [formGroup]="loginForm">   
+                <form [formGroup]="loginForm" (submit)="login()">   
                     <ion-item class="input-field"> 
-                        <ion-input type="text" name="username" formControlName="username" placeholder="Email OR Phone"></ion-input>
+                        <ion-input type="text" name="username" formControlName="username" placeholder="Email OR Phone" [class.invalid]="!loginForm.controls.username.valid && loginForm.controls.username.dirty"></ion-input>
+                    </ion-item>
+
+                    <ion-item *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.dirty">
+                        <p>Please enter a valid username</p>
                     </ion-item>
                     
                     <ion-item class="input-field">
-                        <ion-input type="password" name="password" formControlName="password" placeholder="Password"></ion-input>
+                        <ion-input type="password" name="password" formControlName="password" placeholder="Password" [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
+                    </ion-item>
+
+                    <ion-item *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
+                        <p>Please enter a valid password</p>
                     </ion-item>
             
                     <div class="home-btn">
-                        <button ion-button class="login-btn" (click)="goToServices()">Submit</button>
+                        <button ion-button class="login-btn" [disabled]="!loginForm.valid">Submit</button>
                     </div>
                 </form>
             </ion-list>
