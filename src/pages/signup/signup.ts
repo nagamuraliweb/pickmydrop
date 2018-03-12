@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from 'ionic-angular';
-import { LoginPage } from '../../pages/login/login';
+import { OtpPage } from '../../pages/otp/otp';
 
 import { SignUpService } from '../../pages/signup/signup.service';
 
@@ -33,13 +33,17 @@ export class SignupPage {
         if (this.signUpForm.dirty && this.signUpForm.valid) {
             console.log(this.signUpForm.value);
 
-            this.signUpService.signUp(this.signUpForm.value)
-                .subscribe(() => { this.goToLogin(); });
+            localstorage.setItem('signUpForm', JSON.stringify(this.signUpForm.value));
+
+            this.goToOtp();
+
+            /*this.signUpService.signUp(this.signUpForm.value)
+                .subscribe(() => { this.goToOtp(); });*/
         }
     }
 
-    goToLogin() {
-        this.nav.push(LoginPage);
+    goToOtp() {
+        this.nav.push(OtpPage);
     }
 
 }

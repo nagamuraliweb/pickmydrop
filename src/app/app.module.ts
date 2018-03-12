@@ -8,6 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
+import { OtpPage } from '../pages/otp/otp';
 import { LoginPage } from '../pages/login/login';
 import { PurchasePage } from '../pages/purchase/purchase';
 import { DeliveryPage } from '../pages/delivery/delivery';
@@ -32,6 +33,7 @@ import {HttpModule} from '@angular/http';
     TabsPage,
     HomePage,
     SignupPage,
+    OtpPage,
     LoginPage,
     PurchasePage,
     DeliveryPage,
@@ -54,6 +56,7 @@ import {HttpModule} from '@angular/http';
     TabsPage,
     HomePage,
     SignupPage,
+    OtpPage,
     LoginPage,
     PurchasePage,
     DeliveryPage,
