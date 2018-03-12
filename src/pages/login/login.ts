@@ -12,6 +12,8 @@ import { LoginService } from '../../pages/login/login.service';
 })
 export class LoginPage {
 
+    loginForm: any;
+
     constructor(public nav: NavController, public formBuilder: FormBuilder, private loginService: LoginService) {
     	this.loginForm = formBuilder.group({
 	        username: ['', Validators.compose([Validators.required])],

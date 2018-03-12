@@ -10,6 +10,8 @@ import { LocationPage } from '../../pages/location/location';
 })
 export class RidePage {
 
+    rideForm: any;
+
     constructor(public nav: NavController, public formBuilder: FormBuilder) {
     	this.rideForm = formBuilder.group({
 	        pickup: ['', Validators.compose([Validators.required])],

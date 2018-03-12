@@ -12,7 +12,7 @@ import { SignUpService } from '../../pages/signup/signup.service';
 })
 export class SignupPage {
 
-    resp : string;
+    signUpForm: any;
     
     constructor(public nav: NavController, public formBuilder: FormBuilder, private signUpService: SignUpService) {
     	this.signUpForm = formBuilder.group({
@@ -31,14 +31,10 @@ export class SignupPage {
     signUp() {
 
         if (this.signUpForm.dirty && this.signUpForm.valid) {
-            console.log(this.signUpForm.value);
 
-            localstorage.setItem('signUpForm', JSON.stringify(this.signUpForm.value));
+            localStorage.setItem('signUpForm', JSON.stringify(this.signUpForm.value));
 
             this.goToOtp();
-
-            /*this.signUpService.signUp(this.signUpForm.value)
-                .subscribe(() => { this.goToOtp(); });*/
         }
     }
 

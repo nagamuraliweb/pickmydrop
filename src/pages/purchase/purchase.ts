@@ -10,6 +10,8 @@ import { LocationPage } from '../../pages/location/location';
 })
 export class PurchasePage {
 
+    purchaseForm: any;
+
     constructor(public nav: NavController, public formBuilder: FormBuilder) {
     	this.purchaseForm = formBuilder.group({
 	        purchase: ['', Validators.compose([Validators.required])],
