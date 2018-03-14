@@ -12,17 +12,19 @@ import {
 } from '@ionic-native/google-maps';
 
 import { LocationPage } from '../../pages/location/location';
+import { DeliveryService } from '../../pages/delivery/delivery.service';
 
 @Component({
     selector: 'page-delivery',
-    templateUrl: 'delivery.html'
+    templateUrl: 'delivery.html',
+    providers: [DeliveryService]
 })
 export class DeliveryPage {
 
     map: GoogleMap;
     deliveryForm: any;
 
-    constructor(public nav: NavController, public formBuilder: FormBuilder) {
+    constructor(public nav: NavController, public formBuilder: FormBuilder, private deliveryService: DeliveryService) {
     	this.deliveryForm = formBuilder.group({
 	        pickup: ['', Validators.compose([Validators.required])],
 	        delivery: ['', Validators.compose([Validators.required])],

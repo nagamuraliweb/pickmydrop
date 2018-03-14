@@ -16,11 +16,14 @@ import { RidePage } from '../pages/ride/ride';
 import { ServicesPage } from '../pages/services/services';
 import { LocationPage } from '../pages/location/location';
 
-import { SignUpService } from '../pages/signup/signup.service';
-import { LoginService } from '../pages/login/login.service';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { SignUpService } from '../pages/signup/signup.service';
+import { LoginService } from '../pages/login/login.service';
+import { DeliveryService } from '../pages/delivery/delivery.service';
+import { RideService } from '../pages/ride/ride.service';
+import { PurchaseService } from '../pages/purchase/purchase.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
@@ -69,6 +72,9 @@ import {HttpModule} from '@angular/http';
     SplashScreen,
     SignUpService,
     LoginService,
+    DeliveryService,
+    RideService,
+    PurchaseService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
